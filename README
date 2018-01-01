@@ -1,0 +1,32 @@
+Playing with Snowballs
+----------------------
+
+Basic playing music:
+
+# omxplayer -o local classical.mp3 --vol -2000
+
+Basic LED light loop:
+(Note: check /proc/cpuinfo for whether BCM or something else (to set GPIO mode))
+
+# sudo python led.py
+
+NOTES on setting up speech_to_text:
+
+Get IP:
+nmap -sn X.X.X.X/24
+
+Replace node version (possibly uninstall, then reinstall)
+
+Update/install nodejs with symlink hacks:  https://github.com/giseburt/TinyG-node/issues/4
+
+pi@snowberrypi:~/Desktop/tjbot/recipes/speech_to_text $ diff /home/pi/Desktop/tjbot/recipes/speech_to_text/node_modules/tjbot/lib/tjbot.js /home/pi/Desktop/tjbot/recipes/speech_to_text/node_modules/tjbot/lib/tjbot.js.original 
+924c924
+< TJBot.prototype.pulse = function(color, duration) {
+---
+> TJBot.prototype.pulse = function(color, duration = 1.0) {
+
+sudo apt-get install rpi-update
+sudo apt-get upgrade rpi-update
+
+
+
